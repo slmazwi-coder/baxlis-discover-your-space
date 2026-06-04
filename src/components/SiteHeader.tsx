@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import logo from "@/assets/logo-transparent.asset.json";
+
+// Direct logo URL from Lovable CDN
+const LOGO_URL = "/__l5e/assets-v1/aab6c91d-7822-4e3f-877f-2ac1bf4e1896/baxlis-logo-transparent.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,7 +18,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt="BAXLIS Real Estate" className="h-16 md:h-20 w-auto" />
+          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-16 md:h-20 w-auto" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (

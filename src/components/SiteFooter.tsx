@@ -1,12 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo-transparent.asset.json";
+
+// Direct logo URL from Lovable CDN
+const LOGO_URL = "/__l5e/assets-v1/aab6c91d-7822-4e3f-877f-2ac1bf4e1896/baxlis-logo-transparent.png";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-10 md:grid-cols-3">
         <div>
-          <img src={logo.url} alt="BAXLIS Real Estate" className="h-14 w-auto" />
+          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-14 w-auto" />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             More than an agency. A community that values knowledge, beauty and trust.
           </p>

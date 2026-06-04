@@ -2,8 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { agents, mamiesaImages } from "@/lib/agents";
 import { SiteLayout } from "@/components/SiteLayout";
-import logo from "@/assets/logo-transparent.asset.json";
 import { BrandedPortrait } from "@/components/BrandedPortrait";
+
+// Direct logo URL from Lovable CDN
+const LOGO_URL = "/__l5e/assets-v1/aab6c91d-7822-4e3f-877f-2ac1bf4e1896/baxlis-logo-transparent.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,7 +40,7 @@ function Index() {
           {/* MASSIVE logo — true centerpiece */}
           <div className="mt-10 md:mt-14 flex justify-center">
             <img
-              src={logo.url}
+              src={LOGO_URL}
               alt="BAXLIS Real Estate"
               className="w-full max-w-[92vw] sm:max-w-[640px] md:max-w-[860px] lg:max-w-[1080px] xl:max-w-[1200px] h-auto drop-shadow-[0_20px_60px_rgba(15,80,90,0.35)]"
             />
