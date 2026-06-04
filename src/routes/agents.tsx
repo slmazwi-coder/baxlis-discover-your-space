@@ -28,7 +28,7 @@ function AgentsPage() {
       <section className="mx-auto max-w-7xl px-6 pb-24 space-y-24">
         {agents.map((a, i) => (
           <article key={a.slug} className={`grid gap-10 md:grid-cols-2 md:gap-16 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}>
-            <BrandedPortrait src={a.image} alt={a.name} />
+            <BrandedPortrait src={a.image} alt={a.name} name={a.name} role={a.role} />
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-accent">{a.role}</p>
               <h2 className="font-display mt-3 text-4xl md:text-5xl">{a.name}</h2>

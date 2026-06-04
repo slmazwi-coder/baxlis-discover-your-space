@@ -157,9 +157,7 @@ function Index() {
           <div className="grid gap-8 md:grid-cols-3">
             {agents.map((a) => (
               <div key={a.slug}>
-                <BrandedPortrait src={a.image} alt={a.name} />
-                <p className="font-display text-2xl mt-4">{a.name}</p>
-                <p className="text-sm text-primary-foreground/70">{a.role}</p>
+                <BrandedPortrait src={a.image} alt={a.name} name={a.name} role={a.role} />
               </div>
             ))}
           </div>
