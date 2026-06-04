@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import heroImg from "@/assets/hero.jpg";
+import { mamiesaImages } from "@/lib/agents";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -24,7 +24,7 @@ function AboutPage() {
         </h1>
       </section>
       <section className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-2 md:gap-20 pb-24">
-        <img src={heroImg} alt="A home in the landscape" className="aspect-[4/5] w-full rounded-md object-cover" loading="lazy" />
+        <img src={mamiesaImages.gallery[0]} alt="A BAXLIS home at Mamiesa" className="aspect-[4/5] w-full rounded-md object-cover" loading="lazy" />
         <div className="space-y-6 text-base text-foreground/80 md:text-lg">
           <p>
             BAXLIS was built on a simple belief: property is about discovering places, understanding stories, and finding spaces where life happens.
