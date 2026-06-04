@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.asset.json";
+import logo from "@/assets/logo-transparent.asset.json";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-10 md:grid-cols-3">
         <div>
-          <img src={logo.url} alt="BAXLIS" className="h-10 w-auto" />
+          <img src={logo.url} alt="BAXLIS Real Estate" className="h-14 w-auto" />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             More than an agency. A community that values knowledge, beauty and trust.
           </p>
