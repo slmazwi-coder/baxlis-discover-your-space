@@ -1,12 +1,10 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
-  "functions": {
-    "dist/client/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
+  "env": {
+    "TANSTACK_SSR": "false"
   },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/dist/client/index.html" }
+    { "source": "/api/(.*)", "destination": "/api/$1" }
   ]
 }
