@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
 import { agents, mamiesaImages } from "@/lib/agents";
 import { SiteLayout } from "@/components/SiteLayout";
+import logo from "@/assets/logo-transparent.asset.json";
+import { BrandedPortrait } from "@/components/BrandedPortrait";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,31 +22,51 @@ function Index() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+      <section className="relative isolate overflow-hidden bg-gradient-to-b from-secondary/60 via-background to-background">
+        {/* Decorative background image */}
+        <div className="absolute inset-0 -z-10 opacity-20">
           <img
             src={heroImg}
-            alt="Modern home set against rolling hills at golden hour"
+            alt=""
+            aria-hidden
             className="h-full w-full object-cover"
-            width={1920}
-            height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 pt-24 pb-32 md:pt-40 md:pb-48">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary">BAXLIS — Real Estate</p>
-          <h1 className="font-display mt-6 text-5xl leading-[1.05] text-foreground md:text-7xl lg:text-8xl max-w-4xl">
-            More than an agency.<br />
-            <span className="italic text-primary">A community.</span>
-          </h1>
-          <p className="mt-8 max-w-xl text-base text-foreground/80 md:text-lg">
+        {/* Soft glow behind logo */}
+        <div className="pointer-events-none absolute left-1/2 top-[35%] -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl" />
+
+        <div className="mx-auto max-w-6xl px-6 pt-16 pb-24 md:pt-24 md:pb-32 text-center">
+          <p className="text-[11px] uppercase tracking-[0.4em] text-primary">Est. — Real Estate Reimagined</p>
+
+          {/* Big logo — centerpiece */}
+          <div className="mt-10 flex justify-center">
+            <img
+              src={logo.url}
+              alt="BAXLIS Real Estate"
+              className="w-full max-w-[280px] sm:max-w-md md:max-w-2xl lg:max-w-3xl h-auto drop-shadow-[0_10px_40px_rgba(15,80,90,0.25)]"
+            />
+          </div>
+
+          {/* Decorative divider */}
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <span className="h-px w-12 bg-primary/40" />
+            <span className="text-xs uppercase tracking-[0.45em] text-foreground/60">Discover · Experience · Belong</span>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+
+          <h1 className="sr-only">BAXLIS Real Estate — More than an agency. A community.</h1>
+          <p className="font-display mt-10 text-3xl md:text-5xl lg:text-6xl leading-tight max-w-3xl mx-auto">
+            More than an agency. <span className="italic text-primary">A community.</span>
+          </p>
+          <p className="mt-6 max-w-xl mx-auto text-base text-foreground/75 md:text-lg">
             We don't wait in the office for deals. We go out, discover exceptional properties, and share their stories — because every home has a history worth knowing.
           </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link to="/listings" className="rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:opacity-90">
+          <div className="mt-10 flex justify-center flex-wrap gap-3">
+            <Link to="/listings" className="rounded-full bg-primary px-7 py-3 text-sm text-primary-foreground hover:opacity-90 shadow-lg shadow-primary/20">
               Explore listings
             </Link>
-            <Link to="/about" className="rounded-full border border-foreground/20 px-6 py-3 text-sm text-foreground hover:border-primary hover:text-primary">
+            <Link to="/about" className="rounded-full border border-foreground/20 px-7 py-3 text-sm text-foreground hover:border-primary hover:text-primary">
               Our story
             </Link>
           </div>
@@ -140,9 +162,7 @@ function Index() {
           <div className="grid gap-8 md:grid-cols-3">
             {agents.map((a) => (
               <div key={a.slug}>
-                <div className="aspect-[4/5] overflow-hidden rounded-md bg-primary-foreground/10">
-                  <img src={a.image} alt={a.name} loading="lazy" className="h-full w-full object-cover" />
-                </div>
+                <BrandedPortrait src={a.image} alt={a.name} />
                 <p className="font-display text-2xl mt-4">{a.name}</p>
                 <p className="text-sm text-primary-foreground/70">{a.role}</p>
               </div>
