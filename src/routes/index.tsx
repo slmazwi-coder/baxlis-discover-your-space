@@ -20,66 +20,50 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <SiteLayout>
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-secondary">
-        {/* Real Mamiesa imagery as backdrop */}
-        <div className="absolute inset-0 -z-10">
-          <img
-            src={mamiesaImages.gallery[0]}
-            alt=""
-            aria-hidden
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/70 to-background" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(var(--background)/0.4)_70%,hsl(var(--background))_100%)]" />
+      {/* Hero — logo is the centerpiece */}
+      <section className="relative isolate overflow-hidden bg-background">
+        {/* Subtle radial brand wash — NO photo behind the logo */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.18),transparent_60%)]" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.25),transparent_55%)] blur-3xl" />
+        {/* Faint concentric guides */}
+        <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+          <div className="h-[80vmin] w-[80vmin] rounded-full border border-primary/10" />
+          <div className="absolute h-[60vmin] w-[60vmin] rounded-full border border-primary/10" />
+          <div className="absolute h-[40vmin] w-[40vmin] rounded-full border border-primary/10" />
         </div>
-        {/* Soft glow behind logo */}
-        <div className="pointer-events-none absolute left-1/2 top-[40%] -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl" />
 
-        <div className="mx-auto max-w-6xl px-6 pt-20 pb-28 md:pt-28 md:pb-36 text-center">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-primary-foreground/90">Est. — Real Estate Reimagined</p>
+        <div className="mx-auto max-w-7xl px-6 pt-16 pb-24 md:pt-24 md:pb-32 text-center">
+          <p className="text-[11px] uppercase tracking-[0.4em] text-primary">Est. — Real Estate Reimagined</p>
 
-          {/* Big logo — centerpiece */}
-          <div className="mt-10 flex justify-center">
+          {/* MASSIVE logo — true centerpiece */}
+          <div className="mt-10 md:mt-14 flex justify-center">
             <img
               src={logo.url}
               alt="BAXLIS Real Estate"
-              className="w-full max-w-[300px] sm:max-w-lg md:max-w-2xl lg:max-w-3xl h-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
+              className="w-full max-w-[92vw] sm:max-w-[640px] md:max-w-[860px] lg:max-w-[1080px] xl:max-w-[1200px] h-auto drop-shadow-[0_20px_60px_rgba(15,80,90,0.35)]"
             />
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <span className="h-px w-12 bg-primary-foreground/40" />
-            <span className="text-xs uppercase tracking-[0.45em] text-primary-foreground/80">Discover · Experience · Belong</span>
-            <span className="h-px w-12 bg-primary-foreground/40" />
+          <div className="mt-10 flex items-center justify-center gap-3">
+            <span className="h-px w-12 bg-primary/50" />
+            <span className="text-xs uppercase tracking-[0.45em] text-foreground/70">Discover · Experience · Belong</span>
+            <span className="h-px w-12 bg-primary/50" />
           </div>
 
           <h1 className="sr-only">BAXLIS Real Estate — More than an agency. A community.</h1>
-          <p className="font-display mt-10 text-3xl md:text-5xl lg:text-6xl leading-tight max-w-3xl mx-auto text-primary-foreground">
-            More than an agency. <span className="italic text-primary-foreground/80">A community.</span>
+          <p className="font-display mt-10 text-3xl md:text-5xl lg:text-6xl leading-tight max-w-3xl mx-auto">
+            More than an agency. <span className="italic text-primary">A community.</span>
           </p>
-          <p className="mt-6 max-w-xl mx-auto text-base text-primary-foreground/80 md:text-lg">
+          <p className="mt-6 max-w-xl mx-auto text-base text-foreground/75 md:text-lg">
             We don't wait in the office for deals. We go out, discover exceptional properties, and share their stories — because every home has a history worth knowing.
           </p>
           <div className="mt-10 flex justify-center flex-wrap gap-3">
-            <Link to="/listings" className="rounded-full bg-primary-foreground px-7 py-3 text-sm text-primary hover:opacity-90 shadow-lg">
+            <Link to="/listings" className="rounded-full bg-primary px-7 py-3 text-sm text-primary-foreground hover:opacity-90 shadow-lg shadow-primary/20">
               Explore listings
             </Link>
-            <Link to="/about" className="rounded-full border border-primary-foreground/40 px-7 py-3 text-sm text-primary-foreground hover:bg-primary-foreground/10">
+            <Link to="/about" className="rounded-full border border-foreground/20 px-7 py-3 text-sm text-foreground hover:border-primary hover:text-primary">
               Our story
             </Link>
-          </div>
-        </div>
-
-        {/* Real imagery strip below hero */}
-        <div className="relative mx-auto max-w-7xl px-6 pb-16">
-          <div className="grid grid-cols-3 gap-3 md:gap-5">
-            {mamiesaImages.gallery.slice(0, 3).map((src, i) => (
-              <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-md ring-1 ring-primary-foreground/10">
-                <img src={src} alt={`BAXLIS development imagery ${i + 1}`} className="h-full w-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent" />
-              </div>
-            ))}
           </div>
         </div>
       </section>
