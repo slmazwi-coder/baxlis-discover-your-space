@@ -1,12 +1,15 @@
-// Direct URL strings for images (hosted on Lovable CDN)
-// These need to be re-hosted for production on Vercel
-const MATYANA_URL = "/__l5e/assets-v1/abfb0cb4-9613-4436-824f-0c77b973839b/matyana.jpg";
-const MNXASANE_URL = "/__l5e/assets-v1/a68b897e-da83-4e1a-9cb6-aff99bd63034/mnxasane.jpg";
-const MZAza_URL = "/__l5e/assets-v1/e644f6a0-91e9-419c-a340-5cc5e2790e92/mzaza.jpg";
-const RENDER1_URL = "/__l5e/assets-v1/11a1a42f-4140-4273-b0c3-8debc2e663fd/mamiesa-render-1.jpg";
-const RENDER2_URL = "/__l5e/assets-v1/2767a011-2f22-409c-9065-99f56a88da99/mamiesa-render-2.jpg";
-const RENDER3_URL = "/__l5e/assets-v1/44a8436f-a6e6-408c-9c0b-6ca65dcc4e6e/mamiesa-render-3.jpg";
-const SITE_URL = "/__l5e/assets-v1/a1d99b85-1613-44b0-917c-265590c4bdca/mamiesa-site.jpg";
+// Image URLs - using placeholder for demo
+// Replace with actual hosted images for production
+const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23111' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23666' font-size='12'%3EBAXLIS%3C/text%3E%3C/svg%3E";
+
+// For production, use: https://your-cdn.com/path/to/image.jpg
+const MATYANA_URL = PLACEHOLDER_IMG;
+const MNXASANE_URL = PLACEHOLDER_IMG;
+const MZAza_URL = PLACEHOLDER_IMG;
+const RENDER1_URL = PLACEHOLDER_IMG;
+const RENDER2_URL = PLACEHOLDER_IMG;
+const RENDER3_URL = PLACEHOLDER_IMG;
+const SITE_URL = PLACEHOLDER_IMG;
 
 export type Agent = {
   slug: string;

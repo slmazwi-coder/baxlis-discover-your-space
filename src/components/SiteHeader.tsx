@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 // Direct logo URL from Lovable CDN
-const LOGO_URL = "/__l5e/assets-v1/aab6c91d-7822-4e3f-877f-2ac1bf4e1896/baxlis-logo-transparent.png";
+const LOGO_URL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect fill='%23111' width='200' height='60'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%23fff' font-size='20' font-weight='bold'%3EBAXLIS%3C/text%3E%3C/svg%3E";
 
 const nav = [
   { to: "/", label: "Home" },
