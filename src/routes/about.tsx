@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { SiteLayout } from '../components/SiteLayout'
 
-const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect fill='%23111' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%23666' font-size='20'%3EBAXLIS%3C/text%3E%3C/svg%3E";
+const LOGO_URL = "/logo.png";
 
 export default function AboutPage() {
   return (
@@ -13,7 +13,9 @@ export default function AboutPage() {
         </h1>
       </section>
       <section className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-2 md:gap-20 pb-24">
-        <img src={PLACEHOLDER_IMG} alt="A BAXLIS home at Mamiesa" className="aspect-[4/5] w-full rounded-md object-cover" loading="lazy" />
+        <div className="aspect-[4/5] w-full rounded-2xl bg-gradient-to-br from-primary/10 via-secondary to-primary/5 flex items-center justify-center p-10 ring-1 ring-primary/10 shadow-xl shadow-primary/5">
+          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="w-full max-w-xs md:max-w-sm h-auto drop-shadow-lg" loading="lazy" />
+        </div>
         <div className="space-y-6 text-base text-foreground/80 md:text-lg">
           <p>
             BAXLIS was built on a simple belief: property is about discovering places, understanding stories, and finding spaces where life happens.

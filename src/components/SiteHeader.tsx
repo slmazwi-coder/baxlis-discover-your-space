@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { useState } from "react";
 
-const LOGO_URL = "/__l5e/assets-v1/aab6c91d-7822-4e3f-877f-2ac1bf4e1896/baxlis-logo-transparent.png";
+const LOGO_URL = "/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
