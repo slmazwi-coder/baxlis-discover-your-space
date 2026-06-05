@@ -19,7 +19,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-32 md:h-48 w-auto" />
+          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-12 md:h-16 w-auto" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
