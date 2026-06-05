@@ -1,14 +1,14 @@
 import { Link } from "react-router";
 
 // Placeholder logo SVG
-const LOGO_URL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect fill='%23111' width='200' height='60'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%23fff' font-size='20' font-weight='bold'%3EBAXLIS%3C/text%3E%3C/svg%3E";
+const LOGO_URL = "/logo.png";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-10 md:grid-cols-3">
         <div>
-          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-14 w-auto" />
+          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-20 w-auto" />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             More than an agency. A community that values knowledge, beauty and trust.
           </p>
