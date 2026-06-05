@@ -2,11 +2,16 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
   "framework": "vite",
+  "functions": {
+    "dist/server/server.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "rewrites": [
     { "source": "/assets/:path*", "destination": "/assets/:path*" },
     { "source": "/__l5e/:path*", "destination": "/__l5e/:path*" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/:path*", "destination": "/index.html" }
+    { "source": "/:path*", "destination": "/api/server" }
   ]
 }
