@@ -3,8 +3,6 @@
   "outputDirectory": "dist/client",
   "framework": "vite",
   "rewrites": [
-    { "source": "/assets/:path*", "destination": "/assets/:path*" },
-    { "source": "/__l5e/:path*", "destination": "/__l5e/:path*" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/:path*", "destination": "/index.html" }
