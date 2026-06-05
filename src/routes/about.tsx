@@ -1,20 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/SiteLayout";
-import { mamiesaImages } from "@/lib/agents";
+import { Link } from 'react-router'
+import { SiteLayout } from '../components/SiteLayout'
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About BAXLIS — Our story & beliefs" },
-      { name: "description", content: "BAXLIS is a new-age real estate agency built on heritage, knowledge and trust. Learn what makes us different." },
-      { property: "og:title", content: "About BAXLIS" },
-      { property: "og:description", content: "Property is about more than buying and selling. It's about discovering places, understanding stories, and finding spaces where life happens." },
-    ],
-  }),
-  component: AboutPage,
-});
+const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect fill='%23111' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%23666' font-size='20'%3EBAXLIS%3C/text%3E%3C/svg%3E";
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-12">
@@ -24,16 +13,16 @@ function AboutPage() {
         </h1>
       </section>
       <section className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-2 md:gap-20 pb-24">
-        <img src={mamiesaImages.gallery[0]} alt="A BAXLIS home at Mamiesa" className="aspect-[4/5] w-full rounded-md object-cover" loading="lazy" />
+        <img src={PLACEHOLDER_IMG} alt="A BAXLIS home at Mamiesa" className="aspect-[4/5] w-full rounded-md object-cover" loading="lazy" />
         <div className="space-y-6 text-base text-foreground/80 md:text-lg">
           <p>
             BAXLIS was built on a simple belief: property is about discovering places, understanding stories, and finding spaces where life happens.
           </p>
           <p>
-            We're a new-age real estate agency inspired by the idea of exploring the world and experiencing property at its fullest. We're not office-bound — we go out, discover exceptional properties, and share their stories.
+            We're a new-age real estate agency inspired by the idea of exploring the world and experiencing property at its fullest.
           </p>
           <p>
-            Every property has history and value beyond the price tag, and we make it our mission to understand both.
+            Every property has history and value beyond the price tag.
           </p>
           <p className="font-display text-3xl text-primary italic">
             "We're a new-age agency, but our values are timeless: respect, knowledge, and connection."
@@ -47,9 +36,9 @@ function AboutPage() {
           <h2 className="font-display mt-4 text-4xl md:text-5xl max-w-2xl">Three commitments that guide every relationship.</h2>
           <div className="mt-12 grid gap-10 md:grid-cols-3">
             {[
-              { n: "01", t: "Experience over transactions", d: "We honour the heritage and sentimental value of every property and take time to understand what matters to our owners." },
-              { n: "02", t: "Knowledge + technology", d: "We invest in deep property knowledge, AI-powered tools, and modern marketing — so listings stand out and decisions are informed." },
-              { n: "03", t: "Respect for time & privacy", d: "Pre-recorded viewings protect privacy and save time. We only take pre-approved, serious clients to physical viewings — no wasted trips." },
+              { n: "01", t: "Experience over transactions", d: "We honour the heritage and sentimental value of every property." },
+              { n: "02", t: "Knowledge + technology", d: "Modern marketing with deep property knowledge." },
+              { n: "03", t: "Respect for time & privacy", d: "Pre-recorded viewings save time and protect privacy." },
             ].map((b) => (
               <article key={b.n}>
                 <p className="font-display text-3xl text-primary">{b.n}</p>
@@ -66,7 +55,7 @@ function AboutPage() {
           BAXLIS — More than an agency. A community.
         </p>
         <p className="mt-6 text-muted-foreground">
-          Join us — young or old — and become part of a community that values knowledge, beauty, and trust.
+          Join us and become part of a community that values knowledge, beauty, and trust.
         </p>
         <Link to="/contact" className="mt-10 inline-block rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:opacity-90">
           Get in touch

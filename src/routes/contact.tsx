@@ -1,20 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { agents } from "@/lib/agents";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact BAXLIS Real Estate" },
-      { name: "description", content: "Get in touch with BAXLIS Real Estate. Speak to principal agent Baxolise Matyana or our team." },
-      { property: "og:title", content: "Contact BAXLIS" },
-      { property: "og:description", content: "Let's explore what your property can really offer." },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-12">

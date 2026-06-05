@@ -1,7 +1,7 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router";
 import { useState } from "react";
 
-// Direct logo URL from Lovable CDN
+// Placeholder logo SVG
 const LOGO_URL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect fill='%23111' width='200' height='60'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%23fff' font-size='20' font-weight='bold'%3EBAXLIS%3C/text%3E%3C/svg%3E";
 
 const nav = [
@@ -14,6 +14,8 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -25,9 +27,9 @@ export function SiteHeader() {
             <Link
               key={n.to}
               to={n.to}
-              className="text-sm text-foreground/70 transition-colors hover:text-primary"
-              activeOptions={{ exact: n.to === "/" }}
-              activeProps={{ className: "text-sm text-primary" }}
+              className={`text-sm transition-colors hover:text-primary ${
+                location.pathname === n.to ? "text-primary" : "text-foreground/70"
+              }`}
             >
               {n.label}
             </Link>
@@ -57,7 +59,9 @@ export function SiteHeader() {
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="text-base text-foreground/80"
+                className={`text-base ${
+                  location.pathname === n.to ? "text-primary" : "text-foreground/80"
+                }`}
               >
                 {n.label}
               </Link>

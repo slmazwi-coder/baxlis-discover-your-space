@@ -1,21 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { agents } from "@/lib/agents";
 import { BrandedPortrait } from "@/components/BrandedPortrait";
 
-export const Route = createFileRoute("/agents")({
-  head: () => ({
-    meta: [
-      { title: "Our Agents — BAXLIS Real Estate" },
-      { name: "description", content: "Meet the BAXLIS team — principal agent Baxolise Matyana, Scelo Mnxasane and Phambili Mzaza." },
-      { property: "og:title", content: "Meet the BAXLIS team" },
-      { property: "og:description", content: "People who listen first — get to know our agents." },
-    ],
-  }),
-  component: AgentsPage,
-});
-
-function AgentsPage() {
+export default function AgentsPage() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-12">

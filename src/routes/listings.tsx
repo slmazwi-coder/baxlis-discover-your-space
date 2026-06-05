@@ -1,21 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { mamiesaImages } from "@/lib/agents";
 
-export const Route = createFileRoute("/listings")({
-  head: () => ({
-    meta: [
-      { title: "Listings — BAXLIS Real Estate" },
-      { name: "description", content: "Explore new development homes and curated properties from BAXLIS Real Estate." },
-      { property: "og:title", content: "BAXLIS Listings" },
-      { property: "og:description", content: "New development homes at Mamiesa and more." },
-      { property: "og:image", content: mamiesaImages.hero },
-    ],
-  }),
-  component: ListingsPage,
-});
-
-function ListingsPage() {
+export default function ListingsPage() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-10">
