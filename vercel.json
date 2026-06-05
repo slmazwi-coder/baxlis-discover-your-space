@@ -4,7 +4,7 @@
   "framework": "vite",
   "functions": {
     "dist/server/server.js": {
-      "runtime": "nodejs20"
+      "runtime": "nodejs20.x"
     }
   },
   "rewrites": [
