@@ -58,7 +58,7 @@ export default function Index() {
       </section>
 
       {/* Beliefs */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-6 pt-20 pb-12">
         <div className="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-16">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-accent">Our beliefs</p>

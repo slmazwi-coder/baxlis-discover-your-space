@@ -27,7 +27,7 @@ export function BrandedPortrait({ src, alt, aspect = "aspect-[4/5]", className =
 
       {/* Top brand bar — guarantees logo visibility on every card */}
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between px-3 py-2.5 bg-gradient-to-b from-background/80 to-transparent">
-        <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-7 w-auto md:h-8 drop-shadow" />
+        <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-16 w-auto md:h-18 drop-shadow" />
         <span className="rounded-full bg-primary/95 px-2.5 py-1 text-[9px] uppercase tracking-[0.25em] text-primary-foreground">
           Real Estate
         </span>
@@ -59,7 +59,7 @@ export function BrandedPortrait({ src, alt, aspect = "aspect-[4/5]", className =
               )}
             </div>
             <div className="rounded-md bg-background/95 px-2 py-1.5 shadow-lg backdrop-blur-sm">
-              <img src={LOGO_URL} alt="" aria-hidden className="h-5 w-auto md:h-6" />
+              <img src={LOGO_URL} alt="" aria-hidden className="h-12 w-auto md:h-14 drop-shadow" />
             </div>
           </div>
         </figcaption>
