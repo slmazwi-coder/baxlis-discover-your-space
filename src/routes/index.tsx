@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { agents, mamiesaImages } from "@/lib/agents";
-// SiteLayout is provided by App.tsx; no import needed
+import { SiteLayout } from "@/components/SiteLayout";
 import { BrandedPortrait } from "@/components/BrandedPortrait";
 
 // Placeholder logo SVG
@@ -8,7 +8,7 @@ const LOGO_URL = "/logo.png";
 
 export default function Index() {
   return (
-    
+    <SiteLayout>
       {/* Hero — logo is the centerpiece */}
       <section className="relative isolate overflow-hidden bg-background">
         {/* Subtle radial brand wash — NO photo behind the logo */}
@@ -88,7 +88,9 @@ export default function Index() {
               <p className="text-xs uppercase tracking-[0.3em] text-accent">Featured development</p>
               <h2 className="font-display mt-4 text-4xl md:text-5xl">New homes at Mamiesa</h2>
             </div>
-            <Link to="/listings" className="text-sm text-primary hover:underline">View all listings →</Link>
+            <Link to="/listings" className="text-sm text-primary hover:underline">
+              View all listings →
+            </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             <img src={mamiesaImages.gallery[0]} alt="Mamiesa home — front elevation" loading="lazy" className="aspect-[4/3] w-full rounded-md object-cover" />
@@ -117,7 +119,9 @@ export default function Index() {
       {/* Services */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <p className="text-xs uppercase tracking-[0.3em] text-accent">Property solutions</p>
-        <h2 className="font-display mt-4 text-4xl md:text-5xl max-w-2xl">A full-service partner — from development to farms.</h2>
+        <h2 className="font-display mt-4 text-4xl md:text-5xl max-w-2xl">
+          A full-service partner — from development to farms.
+        </h2>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { t: "Property development", d: "Partnering on residential developments from concept to completion." },
@@ -141,7 +145,9 @@ export default function Index() {
               <p className="text-xs uppercase tracking-[0.3em] text-primary-foreground/60">The team</p>
               <h2 className="font-display mt-4 text-4xl md:text-5xl">People who listen first.</h2>
             </div>
-            <Link to="/agents" className="text-sm text-primary-foreground hover:underline">Meet the agents →</Link>
+            <Link to="/agents" className="text-sm text-primary-foreground hover:underline">
+              Meet the agents →
+            </Link>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {agents.map((a) => (
@@ -159,10 +165,14 @@ export default function Index() {
           Let's explore what your property can really offer.
         </p>
         <div className="mt-10 flex justify-center gap-3 flex-wrap">
-          <Link to="/contact" className="rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:opacity-90">Talk to us</Link>
-          <Link to="/listings" className="rounded-full border border-foreground/20 px-6 py-3 text-sm hover:border-primary hover:text-primary">Browse listings</Link>
+          <Link to="/contact" className="rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:opacity-90">
+            Talk to us
+          </Link>
+          <Link to="/listings" className="rounded-full border border-foreground/20 px-6 py-3 text-sm hover:border-primary hover:text-primary">
+            Browse listings
+          </Link>
         </div>
       </section>
-    
+    </SiteLayout>
   );
 }
