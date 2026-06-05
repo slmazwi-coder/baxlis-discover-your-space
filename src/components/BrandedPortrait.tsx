@@ -1,4 +1,4 @@
-const LOGO_URL = "/logo.png";
+const LOGO_URL = "/__l5e/assets-v1/aab6c91d-7822-4e3f-877f-2ac1bf4e1896/baxlis-logo-transparent.png";
 
 type Props = {
   src: string;
@@ -12,55 +12,53 @@ type Props = {
 export function BrandedPortrait({ src, alt, aspect = "aspect-[4/5]", className = "", name, role }: Props) {
   return (
     <figure
-      className={`group relative overflow-hidden rounded-lg bg-secondary ring-1 ring-primary/20 shadow-xl shadow-primary/10 ${aspect} ${className}`}
+      className={`agent-card group relative overflow-hidden rounded-2xl ${aspect} ${className}`}
     >
-      {/* Consistent crop: face-up framing via object-top */}
+      {/* Agent photo with smooth zoom on hover */}
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+        className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
       />
 
-      {/* Brand color wash — strong bottom, subtle top */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+      {/* Premium gradient overlay — subtle at top, rich at bottom */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
 
-      {/* Top brand bar — guarantees logo visibility on every card */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between px-3 py-2.5 bg-gradient-to-b from-background/80 to-transparent">
-        <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-16 w-auto md:h-20 drop-shadow" />
-        <span className="rounded-full bg-primary/95 px-2.5 py-1 text-[9px] uppercase tracking-[0.25em] text-primary-foreground">
+      {/* Soft vignette edge */}
+      <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.25)]" />
+
+      {/* Top brand bar — single prominent transparent logo */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between px-5 py-4">
+        <img
+          src={LOGO_URL}
+          alt="BAXLIS Real Estate"
+          className="h-12 w-auto md:h-14 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] transition-transform duration-500 group-hover:scale-105"
+        />
+        <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[9px] uppercase tracking-[0.25em] text-white/90 backdrop-blur-md shadow-sm">
           Real Estate
         </span>
       </div>
 
-      {/* Large watermark on the portrait — corner stamp */}
-      <img
-        src={LOGO_URL}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute -bottom-8 -right-8 h-48 w-48 opacity-[0.12] mix-blend-screen rotate-[-8deg]"
-      />
+      {/* Elegant gold accent line */}
+      <div className="pointer-events-none absolute bottom-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-amber-400/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-      {/* Diagonal brand ribbon */}
-      <div className="pointer-events-none absolute -left-12 top-8 -rotate-45 bg-primary/95 px-14 py-1 text-[9px] uppercase tracking-[0.35em] text-primary-foreground shadow-md">
-        BAXLIS
-      </div>
-
-      {/* Caption block — name + role over the brand wash */}
+      {/* Caption block — name + role floating over the gradient */}
       {(name || role) && (
-        <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 px-4 pb-4 pt-10">
-          <div className="flex items-end justify-between gap-3">
-            <div className="text-primary-foreground">
-              {name && <p className="font-display text-xl leading-tight drop-shadow">{name}</p>}
-              {role && (
-                <p className="text-[11px] uppercase tracking-[0.25em] text-primary-foreground/85">
-                  {role}
-                </p>
-              )}
-            </div>
-            <div className="rounded-md bg-background/95 px-2 py-1.5 shadow-lg backdrop-blur-sm">
-              <img src={LOGO_URL} alt="" aria-hidden className="h-16 w-auto md:h-20 drop-shadow" />
-            </div>
+        <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 px-5 pb-5 pt-16">
+          <div className="transform transition-transform duration-500 group-hover:translate-y-[-4px]">
+            {name && (
+              <p className="font-display text-2xl leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+                {name}
+              </p>
+            )}
+            {role && (
+              <p className="mt-1.5 text-[11px] uppercase tracking-[0.3em] text-white/70">
+                {role}
+              </p>
+            )}
+            {/* Subtle underline accent */}
+            <div className="mt-3 h-px w-10 bg-gradient-to-r from-amber-400/70 to-transparent transition-all duration-500 group-hover:w-16" />
           </div>
         </figcaption>
       )}

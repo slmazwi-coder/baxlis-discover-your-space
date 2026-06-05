@@ -149,4 +149,19 @@
     font-weight: 400;
     letter-spacing: -0.01em;
   }
+
+  /* Premium agent card styles */
+  .agent-card {
+    box-shadow:
+      0 4px 24px -4px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(0, 0, 0, 0.04);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .agent-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 60px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
 }

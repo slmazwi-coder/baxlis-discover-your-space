@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { useState } from "react";
 
-const LOGO_URL = "/logo.png";
+const LOGO_URL = "/__l5e/assets-v1/aab6c91d-7822-4e3f-877f-2ac1bf4e1896/baxlis-logo-transparent.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -17,9 +17,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-12 md:h-16 w-auto" />
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <img src={LOGO_URL} alt="BAXLIS Real Estate" className="h-16 md:h-20 lg:h-24 w-auto drop-shadow-sm" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
