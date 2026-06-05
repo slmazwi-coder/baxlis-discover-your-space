@@ -8,7 +8,7 @@ const LOGO_URL = "/logo.png";
 
 export default function Index() {
   return (
-    <SiteLayout>
+    
       {/* Hero — logo is the centerpiece */}
       <section className="relative isolate overflow-hidden bg-background">
         {/* Subtle radial brand wash — NO photo behind the logo */}
@@ -163,6 +163,6 @@ export default function Index() {
           <Link to="/listings" className="rounded-full border border-foreground/20 px-6 py-3 text-sm hover:border-primary hover:text-primary">Browse listings</Link>
         </div>
       </section>
-    </SiteLayout>
+    
   );
 }
