@@ -1,4 +1,4 @@
-import { HydrationBoundary, QueryClientProvider, dehydrate } from '@tanstack/react-query'
+import { HydrationBoundary, QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider, createMemoryHistory } from '@tanstack/react-router'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
@@ -15,7 +15,7 @@ async function main() {
   const queryClient = router.context.queryClient
   const dehydratedState = (window as any).__DEHYDRATED_STATE__
 
-  const rootElement = document.getElementById('app')!
+  const rootElement = document.getElementById('root')!
 
   if (!rootElement.innerHTML) {
     const root = ReactDOM.createRoot(rootElement)
