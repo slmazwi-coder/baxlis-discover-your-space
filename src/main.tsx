@@ -22,23 +22,23 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: () => import('./routes/index').then(m => m.default),
+        lazy: () => import('./routes/index').then(m => ({ Component: m.default })),
       },
       {
         path: 'about',
-        Component: () => import('./routes/about').then(m => m.default),
+        lazy: () => import('./routes/about').then(m => ({ Component: m.default })),
       },
       {
         path: 'agents',
-        Component: () => import('./routes/agents').then(m => m.default),
+        lazy: () => import('./routes/agents').then(m => ({ Component: m.default })),
       },
       {
         path: 'contact',
-        Component: () => import('./routes/contact').then(m => m.default),
+        lazy: () => import('./routes/contact').then(m => ({ Component: m.default })),
       },
       {
         path: 'listings',
-        Component: () => import('./routes/listings').then(m => m.default),
+        lazy: () => import('./routes/listings').then(m => ({ Component: m.default })),
       },
     ],
   },
